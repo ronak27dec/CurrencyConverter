@@ -7,13 +7,12 @@
 
 import Foundation
 
-class CurrencyConverterViewModel {
+final class CurrencyConverterViewModel {
     
     private var currencyConverterTask: CurrencyConverterServiceProtocol
     private var currencyFileTask: CurrencyFileServiceProtocol
 
     var currencies: Currencies?
-
     var bindDataOnFailure: ((NetworkError?) -> Void) = {_ in }
     var bindDataOnSuccess: ((String) -> Void) = {_ in }
     
@@ -26,7 +25,6 @@ class CurrencyConverterViewModel {
     func convertCurrency(from sourceCurrency: String,
                          to targetCurrency: String,
                          amount: String) {
-
         currencyConverterTask.convertCurrency(from: sourceCurrency,
                                               to: targetCurrency,
                                               amount: amount) { [weak self] result in
@@ -47,7 +45,6 @@ class CurrencyConverterViewModel {
     }
 
     func fetchCurrencies() {
-
         currencyFileTask.fetchCurrenciesSynchronously { result in
             switch result {
                 case .success(let currencies):

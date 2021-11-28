@@ -32,13 +32,11 @@ final class FetchCurrencyFileTask: CurrencyFileServiceProtocol {
             onCompletion(.failure(.networkError("NO Data")))
             return
         }
-        
         do {
             let parser = Parser(data: unwrappedData)
             let model = try parser.parse(for: Currencies.self)
             onCompletion(.success(model))
-        }
-        catch (let ex) {
+        } catch (let ex) {
             onCompletion(.failure(.parsingError("Parsing Error: \(ex)")))
         }
     }

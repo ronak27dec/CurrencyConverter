@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CurrencyConverterViewController: UIViewController {
+final class CurrencyConverterViewController: UIViewController {
 
     @IBOutlet var amountTextField: UITextField!
     @IBOutlet var sourceCurrencyTextField: UITextField!

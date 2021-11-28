@@ -17,23 +17,16 @@ final class NetworkService {
     
     func dispatch(_ endpoint: Endpoint,
                   onCompletion: @escaping (Result<Data, NetworkError>) -> Void) -> URLSessionTask? {
-        
         guard let url = endpoint.url else {
             onCompletion(.failure(NetworkError.invalidURL))
             return nil
         }
-        
-        print("URL: \(url)")
-        
         let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 onCompletion(.failure(.networkError("NETWORKING ERROR: " + error.localizedDescription)))
                 return
             }
-            
-            if let data = data {
-                onCompletion(.success(data))
-            }
+            if let data = data {onCompletion(.success(data))}
         }
         task.resume()
         return task

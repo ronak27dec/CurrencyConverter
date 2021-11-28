@@ -8,7 +8,7 @@
 import Foundation
 
 extension FileManager {
-
+    
     static func readJson(forResource fileName: String ) -> Data? {
         let bundle = Bundle(for: FileService.self)
         if let path = bundle.path(forResource: fileName, ofType: "json") {
