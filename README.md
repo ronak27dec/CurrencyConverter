@@ -23,4 +23,5 @@ Why ?
 There is always scope of improvements in any code written :). I think we can make error handling more better as little importance is given on edge cases. 
 UI can be improved with intuitive animations. 
 More unit tests can be written if time permits.
+Generic datasource for picker can be used. 
 
