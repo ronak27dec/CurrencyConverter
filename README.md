@@ -1,5 +1,5 @@
 
-#Currency Converter
+# Currency Converter
 
 This is a simple app which converts a given amount from one currency into another. I named the app as 'Currency Converter'. 
 
@@ -15,11 +15,12 @@ No third party API is used in the app. Every components is native.
 
 The code is flexible and extendable. SOLID is kept in mind while developing.
 
-Architecture followed is MVVM. 
-Why ? 
+# Architecture - MVVM. 
 - provides weak coupling between view, view model & model by using data binding. Here, since the app is simple enough, we have used closure based binding. 
 - provides greater testability. Wrote tests for a view model and able to up achieve 97% coverage.
+- makes controller/view dumb. Reduced complexity by moving business logic out from it 
 
+# Improvements
 There is always scope of improvements in any code written :). I think we can make error handling more better as little importance is given on edge cases. 
 UI can be improved with intuitive animations. 
 More unit tests can be written if time permits.
