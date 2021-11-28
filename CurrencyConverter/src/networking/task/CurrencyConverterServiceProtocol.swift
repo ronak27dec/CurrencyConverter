@@ -1,5 +1,5 @@
 //
-//  CurrencyServiceProtocol.swift
+//  CurrencyConverterServiceProtocol.swift
 //  CurrencyConverter
 //
 //  Created by Ronak on 25/11/21.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol CurrencyServiceProtocol {
+protocol CurrencyConverterServiceProtocol {
     func convertCurrency(from: String,
                          to: String,
                          amount: String,
-                         onCompletion: @escaping (Result<Currency?, NetworkError>) -> Void)
+                         onCompletion: @escaping (Result<Converter?, NetworkError>) -> Void)
 }

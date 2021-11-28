@@ -12,4 +12,5 @@ enum NetworkError: Error {
     case parsingError(_ error: String)
     case networkError(_ error: String)
     case genericError(_ error: String)
+    case fileServiceError(_ error: String)
 }

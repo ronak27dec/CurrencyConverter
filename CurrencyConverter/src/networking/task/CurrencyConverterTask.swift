@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CurrencyConverterTask: CurrencyServiceProtocol {
+final class CurrencyConverterTask: CurrencyConverterServiceProtocol {
     private var service: NetworkService
     private var task: URLSessionTask?
     
@@ -17,33 +17,33 @@ final class CurrencyConverterTask: CurrencyServiceProtocol {
     
     func convertCurrency(from sourceCurrency: String,
                          to targetCurrency: String,
-                         amount: String, onCompletion: @escaping (Result<Currency?, NetworkError>) -> Void) {
+                         amount: String, onCompletion: @escaping (Result<Converter?, NetworkError>) -> Void) {
         cancel()
         task = service.dispatch(.currencyConverter(sourceCurrency: sourceCurrency,
                                                    targetCurrency: targetCurrency,
                                                    amount: amount),
                                 onCompletion: {[weak self] result in
                                     switch result {
-                                        case .success(let currencyData):
-                                            self?.currencyResponseHandlerOnSuccess(currencyData,
-                                                                                   onCompletion: onCompletion)
+                                        case .success(let converterData):
+                                            self?.currencyConverterResponseHandlerOnSuccess(converterData,
+                                                                                            onCompletion: onCompletion)
                                             
                                         case .failure(let error):
-                                            self?.currencyResponseHandlerOnFailure(error,
-                                                                                   onCompletion: onCompletion)
+                                            self?.currencyConverterResponseHandlerOnFailure(error,
+                                                                                            onCompletion: onCompletion)
                                     }
                                 })
     }
     
-    private func currencyResponseHandlerOnSuccess(_ responseData: Data?,
-                                                  onCompletion: @escaping (Result<Currency?, NetworkError>) -> Void) {
-        guard let unwrappedData = responseData else {
+    private func currencyConverterResponseHandlerOnSuccess(_ converterData: Data?,
+                                                           onCompletion: @escaping (Result<Converter?, NetworkError>) -> Void) {
+        guard let unwrappedData = converterData else {
             onCompletion(.failure(.networkError("NETWORK ERROR: No Data")))
             return
         }
         let parser = Parser(data: unwrappedData)
         do {
-            let model = try parser.parse(for: Currency.self)
+            let model = try parser.parse(for: Converter.self)
             onCompletion(.success(model))
         }
         catch(let ex) {
@@ -51,8 +51,8 @@ final class CurrencyConverterTask: CurrencyServiceProtocol {
         }
     }
     
-    private func currencyResponseHandlerOnFailure(_ error: NetworkError,
-                                                  onCompletion: @escaping (Result<Currency?, NetworkError>) -> Void) {
+    private func currencyConverterResponseHandlerOnFailure(_ error: NetworkError,
+                                                           onCompletion: @escaping (Result<Converter?, NetworkError>) -> Void) {
         onCompletion(.failure(.networkError(error.localizedDescription)))
     }
     
