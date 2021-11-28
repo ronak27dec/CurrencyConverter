@@ -29,6 +29,7 @@ final class CurrencyConverterViewController: UIViewController {
     }
 
     private func setupUIOnLoad() {
+        title = "Currency Converter"
         picker.delegate = self
         picker.dataSource = self
         sourceCurrencyTextField.addTarget(self, action: #selector(showPicker(_:)), for: .touchDown)
@@ -54,13 +55,12 @@ final class CurrencyConverterViewController: UIViewController {
         }
     }
 
-    func updateUI(_ text: String) {
+    private func updateUI(_ text: String) {
         resultLabel.text = text
     }
 
-    func updateUIOnFailure(_ error: NetworkError?) {
+    private func updateUIOnFailure(_ error: NetworkError?) {
         print("ERROR: \(String(describing: error?.localizedDescription))")
-
         showErrorAlert()
     }
 
@@ -93,9 +93,7 @@ final class CurrencyConverterViewController: UIViewController {
         textField.inputAccessoryView = toolBar
     }
 
-    @objc func action() {
-        view.endEditing(true)
-    }
+    @objc func action() {view.endEditing(true)}
 }
 
 

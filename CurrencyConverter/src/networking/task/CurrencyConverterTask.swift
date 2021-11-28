@@ -8,10 +8,10 @@
 import Foundation
 
 final class CurrencyConverterTask: CurrencyConverterServiceProtocol {
-    private var service: NetworkService
+    private var service: NetworkServiceable
     private var task: URLSessionTask?
     
-    init(with service: NetworkService = NetworkService()) {
+    init(with service: NetworkServiceable = NetworkService()) {
         self.service = service
     }
     
@@ -50,12 +50,12 @@ final class CurrencyConverterTask: CurrencyConverterServiceProtocol {
             onCompletion(.failure(.parsingError("PARSING ERROR: " + ex.localizedDescription)))
         }
     }
-    
+
     private func currencyConverterResponseHandlerOnFailure(_ error: NetworkError,
                                                            onCompletion: @escaping (Result<Converter?, NetworkError>) -> Void) {
         onCompletion(.failure(.networkError(error.localizedDescription)))
     }
-    
+
     private func cancel() {
         guard let task = task else {return}
         task.cancel()

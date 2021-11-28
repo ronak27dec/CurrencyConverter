@@ -11,10 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrencyConverterViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
-                <outlet property="amountTextField" destination="KCT-1b-7zy" id="TNZ-ZG-GZ5"/>
-                <outlet property="destinationCurrencyTextField" destination="C67-j3-URx" id="6Mi-Ha-NkP"/>
+                <outlet property="amountTextField" destination="4HL-nC-JJH" id="gVw-bo-cHj"/>
+                <outlet property="destinationCurrencyTextField" destination="nnf-wf-TFP" id="aNd-Cb-nq6"/>
                 <outlet property="resultLabel" destination="dEN-NG-3T8" id="4Cq-4Z-t10"/>
-                <outlet property="sourceCurrencyTextField" destination="z8b-fY-gRf" id="MJb-Fb-44i"/>
+                <outlet property="sourceCurrencyTextField" destination="Avf-P4-gUM" id="6tk-rX-diL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,32 +23,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Amount" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KCT-1b-7zy">
-                    <rect key="frame" x="20" y="74" width="374" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Uoe-dh-MCB"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dJW-8e-oqZ">
-                    <rect key="frame" x="20" y="144" width="374" height="40"/>
-                    <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Source Currency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8b-fY-gRf">
-                            <rect key="frame" x="0.0" y="0.0" width="179" height="40"/>
-                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Target Currency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C67-j3-URx">
-                            <rect key="frame" x="195" y="0.0" width="179" height="40"/>
-                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                        </textField>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="zn3-2v-l2s"/>
-                    </constraints>
-                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhT-eA-jtK">
                     <rect key="frame" x="20" y="797" width="374" height="45"/>
                     <color key="backgroundColor" systemColor="labelColor"/>
@@ -70,6 +44,63 @@
                         <constraint firstAttribute="height" constant="150" id="t1u-0n-C3e"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbS-4X-aUj">
+                    <rect key="frame" x="20" y="64" width="80" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Kb8-v2-Sfu"/>
+                        <constraint firstAttribute="height" constant="21" id="MdU-C3-hBx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip9-Y9-luc">
+                    <rect key="frame" x="20" y="118" width="143" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="99l-gQ-ZVb"/>
+                        <constraint firstAttribute="width" constant="143" id="oH2-Ev-xTF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4HL-nC-JJH">
+                    <rect key="frame" x="227" y="59" width="167" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="167" id="LCi-4X-zNS"/>
+                        <constraint firstAttribute="height" constant="35" id="zZC-eT-ynV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avf-P4-gUM">
+                    <rect key="frame" x="227" y="111" width="167" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="167" id="clq-lq-q0D"/>
+                        <constraint firstAttribute="height" constant="35" id="gXo-Lr-dZn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-wf-TFP">
+                    <rect key="frame" x="227" y="166" width="167" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="a6d-7R-NxH"/>
+                        <constraint firstAttribute="width" constant="167" id="ofN-zv-1pg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sao-oZ-aiH">
+                    <rect key="frame" x="20" y="173" width="177" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="nbj-SV-bOu"/>
+                        <constraint firstAttribute="width" constant="177" id="xtY-d5-xc8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -77,21 +108,27 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KCT-1b-7zy" secondAttribute="trailing" constant="20" id="041-Ax-Ffx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nnf-wf-TFP" secondAttribute="trailing" constant="20" id="2Oq-l8-Zcd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4HL-nC-JJH" secondAttribute="trailing" constant="20" id="62x-MT-BLZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Avf-P4-gUM" secondAttribute="trailing" constant="20" id="6SX-jG-GEN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WhT-eA-jtK" secondAttribute="bottom" constant="20" id="6og-XS-BOY"/>
+                <constraint firstItem="DbS-4X-aUj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="CHZ-km-Flb"/>
+                <constraint firstItem="Avf-P4-gUM" firstAttribute="top" secondItem="4HL-nC-JJH" secondAttribute="bottom" constant="17" id="CPX-Zm-hkH"/>
+                <constraint firstItem="4HL-nC-JJH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="D1c-1w-YSO"/>
                 <constraint firstItem="dEN-NG-3T8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HHr-o7-8ry"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dEN-NG-3T8" secondAttribute="trailing" constant="20" id="IRB-Ui-kU5"/>
                 <constraint firstItem="dEN-NG-3T8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="K4g-6B-PqM"/>
-                <constraint firstItem="dJW-8e-oqZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="K7A-mN-u6i"/>
-                <constraint firstItem="KCT-1b-7zy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="L17-oI-BnX"/>
+                <constraint firstItem="sao-oZ-aiH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LEE-hs-f2p"/>
+                <constraint firstItem="nnf-wf-TFP" firstAttribute="top" secondItem="Avf-P4-gUM" secondAttribute="bottom" constant="20" id="Q62-zI-CaP"/>
                 <constraint firstItem="dEN-NG-3T8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aen-Fi-Vj6"/>
+                <constraint firstItem="sao-oZ-aiH" firstAttribute="top" secondItem="Ip9-Y9-luc" secondAttribute="bottom" constant="34" id="cTy-dE-8iv"/>
                 <constraint firstItem="WhT-eA-jtK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dYv-gg-AM9"/>
-                <constraint firstItem="dJW-8e-oqZ" firstAttribute="top" secondItem="KCT-1b-7zy" secondAttribute="bottom" constant="30" id="h6n-RS-XSn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dJW-8e-oqZ" secondAttribute="trailing" constant="20" id="mYf-2M-N58"/>
-                <constraint firstItem="KCT-1b-7zy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tuj-db-qdq"/>
+                <constraint firstItem="DbS-4X-aUj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="gbW-YZ-Xdt"/>
+                <constraint firstItem="Ip9-Y9-luc" firstAttribute="top" secondItem="DbS-4X-aUj" secondAttribute="bottom" constant="33" id="mck-SH-gSX"/>
+                <constraint firstItem="Ip9-Y9-luc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="o7Q-ck-10m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WhT-eA-jtK" secondAttribute="trailing" constant="20" id="yW4-YK-znS"/>
             </constraints>
-            <point key="canvasLocation" x="-171.01449275362319" y="64.955357142857139"/>
+            <point key="canvasLocation" x="-165.21739130434784" y="-66.294642857142861"/>
         </view>
     </objects>
     <resources>

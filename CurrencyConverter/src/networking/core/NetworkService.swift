@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetworkService {
+final class NetworkService: NetworkServiceable {
     
     private var session: URLSession
     

@@ -11,7 +11,7 @@ final class CurrencyConverterViewModel {
     
     private var currencyConverterTask: CurrencyConverterServiceProtocol
     private var currencyFileTask: CurrencyFileServiceProtocol
-
+    
     var currencies: Currencies?
     var bindDataOnFailure: ((NetworkError?) -> Void) = {_ in }
     var bindDataOnSuccess: ((String) -> Void) = {_ in }
@@ -36,24 +36,24 @@ final class CurrencyConverterViewModel {
                             return
                         }
                         self?.bindDataOnSuccess(unwrappedText)
-
+                        
                     case .failure(let error):
                         self?.bindDataOnFailure(error)
                 }
             }
         }
     }
-
+    
     func fetchCurrencies() {
         currencyFileTask.fetchCurrenciesSynchronously { result in
             switch result {
                 case .success(let currencies):
                     self.currencies = currencies
-
+                    
                 case .failure(let error):
                     print("Fetch Symbol Failed with error: \(error)")
             }
         }
     }
-
+    
 }
